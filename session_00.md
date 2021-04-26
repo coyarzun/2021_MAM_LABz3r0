@@ -130,6 +130,9 @@ background(random(255));//nos presenta grises aleatorios
 colorMode(HSB, 255);
 background(random(255),255,255);
 
+random(n) nos entrega un número aleatorio entre 0 y n, sin incluir n.
+random(n, m) nos entrega un número aleatorio entre n y m, sin incluir m.
+
 
 
 
