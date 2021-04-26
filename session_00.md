@@ -6,7 +6,7 @@ Para ejecutarse un programa no puede tener errores de sintaxis.
 
 Lo primero que tenemos cuando nos enfrentamos a la interfaz de p5.js es un código base con el siguiente código:
 
-Aparecen las definiciones de las funciones setup() y draw()
+Aparecen las definiciones de las funciones 'setup()' y draw()
 
 Las funciones son estructuras de código que se etiquetan bajo un nombre, pudiendo o no recibir argumentos entre los paréntesis.
 Entre las llaves {}
