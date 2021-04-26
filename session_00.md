@@ -53,7 +53,7 @@ Asimismo definen el flujo de nuestro programa, setup() será invocada una única
 draw() en cambio se ejecutará en adelante a un frameRate teórico de 60 fps.
 Podemos modificar la velocidad de reproducción usando la función frameRate():
 
-`void setup(){
+`void setup(){  
   createCanvas(100,100);
   frameRate(10);//correré a 10 fps
 }`
@@ -101,6 +101,16 @@ background(180, 50, 100);`
 
 `colorMode(HSB);//configura el modo de color a HSB con los rangos de cada uno de los componentes entre 0 y 255
 background(128,128,255);//me he resultado más práctico este manera`
+
+Correlaciones
+-------------
+Veamos el sgte ejemplo:
+
+background(frameCount);
+
+el color de fondo vá de negro a blanco y luego se queda pegado.
+lo que sucede es que frameCount sobrepasó el valor de 255, límite válido para nuestro sistema de color,
+usando el operador módulo % podemos 
 
 
 
