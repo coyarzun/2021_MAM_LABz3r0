@@ -128,10 +128,18 @@ Tambien podemos asociar argumentos a valores aleatorios:
 background(random(255));//nos presenta grises aleatorios
 
 colorMode(HSB, 255);
-background(random(255),255,255);
+background(random(255),255,255);//obtenemos un color aleatorio full saturacion y brillo
 
 random(n) nos entrega un número aleatorio entre 0 y n, sin incluir n.
 random(n, m) nos entrega un número aleatorio entre n y m, sin incluir m.
+
+colorMode(HSB, 255)
+background(random(20,50), 255, 255);//un color anaranjado, full saturación y brillo
+
+colorMode(HSB, 255)
+background(random(20,50), 255, random(255));//un color anaranjado, full saturación y con un brillo que parpadea 
+
+
 
 
 
