@@ -128,6 +128,8 @@ Tambien podemos asociar argumentos a valores aleatorios:
 background(random(255));//nos presenta grises aleatorios
 
 colorMode(HSB, 255);
+background(random(255),255,255);
+
 
 
 
