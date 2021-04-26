@@ -110,7 +110,11 @@ background(frameCount);
 
 el color de fondo vá de negro a blanco y luego se queda pegado.
 lo que sucede es que frameCount sobrepasó el valor de 255, límite válido para nuestro sistema de color,
-usando el operador módulo % podemos 
+usando el operador módulo % podemos convertir este valor en una sierra, que vá de 0 a 255 y luego vuelve a 0.
+a%b nos retorna el resto de a y b, un valor entero entre cero y (b-1).
+Si a%b nos retorna cero, quiere decir que b es múltiplo de 2.
+Esto suele ser de utilidad para saber si un número es par o no ( múltiplo de 2 ) caso en que n%2 sería 0.
+
 
 
 
