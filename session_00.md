@@ -1,6 +1,7 @@
 Sesión 01
+---------
 Algunas reglas de sintaxis básicas.
--------------------------------------
+
 Todo lenguaje de programación tiene sus propias reglas de escritura que denominamos sintaxis.
 Para ejecutarse un programa no puede tener errores de sintaxis.
 
