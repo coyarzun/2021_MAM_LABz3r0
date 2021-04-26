@@ -80,9 +80,9 @@ background es una función que nos permite colorear el fondo de nuestro canvas d
 En el ejemplo, 220 equivale a un gris.
 Cuando background recibe UN sólo argumento, este valor es interpretado como una escala de grises de 8 bits, es decir, con valores entre 0 y 255.
 
-`background(0);//negro
-background(128);//gris medio
-background(255);//blanco`
+`background(0);//negro  
+background(128);//gris medio  
+background(255);//blanco`  
 
 Sin embargo, background también puede recibir TRES argumentos, y en este caso los interpretará como RGB, es decir como un sistema de color aditivo de tres canales de 8 bits cada uno, correspondientes al Rojo, Verde y Azul respectivamente.
 
