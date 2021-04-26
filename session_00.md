@@ -13,10 +13,10 @@ se ejecutará
 */`
 
 Muchas veces encontraremos esta sintaxis, que llamaríamos comentarios de desarrollador:
-`/** 
-Suelen contener información relevante
-respecto de autorías, referencias, propósitos, avances y pendientes,
-para nosotrxs mismxs, con otrxs desarrolladorxs o para quienes accedan a este código.
+`/**  
+Suelen contener información relevante 
+respecto de autorías, referencias, propósitos, avances y pendientes, 
+para nosotrxs mismxs, con otrxs desarrolladorxs o para quienes accedan a este código. 
 */`
 
 Utilizamos comentarios para comunicarnos y como manera de documentar nuestro código.
