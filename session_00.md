@@ -53,10 +53,10 @@ Asimismo definen el flujo de nuestro programa, setup() será invocada una única
 draw() en cambio se ejecutará en adelante a un frameRate teórico de 60 fps.
 Podemos modificar la velocidad de reproducción usando la función frameRate():
 
-`void setup(){  
-  createCanvas(100,100);
-  frameRate(10);//correré a 10 fps
-}`
+`void setup(){`
+`  createCanvas(100,100);`
+`  frameRate(10);//correré a 10 fps`
+`}`
 
 y podemos leer cuantos frames hemos ejecutado usando frameCount, una variable de sistema.
 
