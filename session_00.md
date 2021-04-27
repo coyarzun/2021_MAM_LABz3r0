@@ -57,13 +57,12 @@ p5.js es un lenguaje case sensitive, es decir sensible a la caja, lo que quiere 
 
 
 
-camelCase
+Para facilitar la lectura de nombres compuestos, se utiliza la estrategia de camelCase o cajaDeCamello, es así como encontramos palabras como:
 
+rectMode(center);
+strokeWeight(1.0)
 
-
-usar sólo palabras reservadas.
-
-
+Finalmente, sólo podemos utilizar instrucciones y palabras reservadas.
 
 Un primer vistazo a p5.js
 -----------------
@@ -193,13 +192,13 @@ pero, que sucedería si deseáramos un canvas de distinto tamaño y/o proporcion
 lo cual, aplicado a nuestro ejemplo:
 
 `function setup(){
-  size(600,200);//ancho y alto diferentes a 256
+  createCanvas(600,200);//ancho y alto diferentes a 256
   colorMode(HSB, 25);
 }
 function draw(){
   background( //acá ocupamos la flexibilidad de los whiteSpaces
-                map(mouseX,0,width,0,255);//width nos permite parametrizar nuestro cálculo independiente de las dimensiones dadas en setup
-                map(mouseY,0,height,0,255);//y lo mismo height 
+                map(mouseX,0,width,0,255),//width nos permite parametrizar nuestro cálculo independiente de las dimensiones dadas en setup
+                map(mouseY,0,height,0,255),//y lo mismo height 
                 255);//el tinte queda determinado por la posición horizontal, la saturación por la posición vertical
 }`
 
