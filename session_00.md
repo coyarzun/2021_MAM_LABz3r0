@@ -139,6 +139,19 @@ background(random(20,50), 255, 255);//un color anaranjado, full saturación y br
 colorMode(HSB, 255)
 background(random(20,50), 255, random(255));//un color anaranjado, full saturación y con un brillo que parpadea 
 
+Y, así como podemos vincular nuestros valores a comportamientos deterministas y lineales como el frameRate, y aleatorios como el random,
+también podemos correlacionarlos con eventos indeterminados, como la posición de nuestro mouse, por ejemplo, usando sus coordenadas mouseX y mouseY:
+
+function setup(){
+  size(256,256);
+  colorMode(HSB, 25);
+}
+function draw(){
+  background(random(20,50), 255, random(255));//un color anaranjado, full saturación y con un brillo que parpadea 
+}
+
+
+
 
 
 
