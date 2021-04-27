@@ -39,13 +39,31 @@ La única excepción es a continuación de las llaves `{}`. Entre estas se puede
   haceOtraCosa();//punto y coma después de la segunda
 }//no hay punto y coma a continuación de las llaves`
 
-white spaces
+Los espacios en blanco o whiteSpaces no son relevantes en el funcionamiento o interpretación del programa, es decir,
 
-usar sólo palabras reservadas.
+`var a = 2*b;`
+
+es equivalente a
+
+`var
+  a
+= 2*
+b
+;`
+
+El sentido de los espacios blancos, indentados y tabulaciones es darle una organización visual personalizada al código, facilitando su lectura y acceso. Su uso por tanto es bastante subjetivo y en general responde tanto a convenciones como a decisiones basadas en el gusto del autor.
+
+p5.js es un lenguaje case sensitive, es decir sensible a la caja, lo que quiere decir que mayúsculas y minúsculas son diferentes:
+
+
 
 camelCase
 
-case sentsitive
+
+
+usar sólo palabras reservadas.
+
+
 
 Un primer vistazo a p5.js
 -----------------
