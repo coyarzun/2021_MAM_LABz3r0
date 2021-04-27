@@ -143,15 +143,29 @@ Y, así como podemos vincular nuestros valores a comportamientos deterministas y
 también podemos correlacionarlos con eventos indeterminados, como la posición de nuestro mouse, por ejemplo, usando sus coordenadas mouseX y mouseY:
 
 function setup(){
-
   size(256,256);
   colorMode(HSB, 25);
 }
 function draw(){
-  background(random(20,50), 255, random(255));//un color anaranjado, full saturación y con un brillo que parpadea 
+  background(mouseX, mouseY, 255);//el tinte queda determinado por la posición horizontal, la saturación por la posición vertical
 }
 
+Bonus track!!
 
+En el ejemplo anterior, hemos asegurado el funcionamiento de nuestro script dimensionando el canvas a un tamaño seguro de 256x256px,
+pero, que sucedería si deseáramos un canvas de distinto tamaño y/o proporciones? Para ello está la función map, que hace las veces de regla de tres, mapeando o escalando nuestro valor de entrada ( con sus respectivos límites, minI, maxI ), y sus equivalentes de salida ( entre minO y maxO )
+
+map(i, minI, maxI, minO, maxO);
+
+lo cual, aplicado a nuestro ejemplo:
+
+function setup(){
+  size(256,256);
+  colorMode(HSB, 25);
+}
+function draw(){
+  background(mouseX, mouseY, 255);//el tinte queda determinado por la posición horizontal, la saturación por la posición vertical
+}
 
 
 
