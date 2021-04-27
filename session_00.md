@@ -26,6 +26,8 @@ Todo texto en una línea despues de un `//` también se transforma en comentario
 var k=i+j;
 k*=2//y duplicamos nuestro valor`
 
+Ahora, cómo se determina qué texto se ejecutará?
+
 punto y coma
 
 white spaces
@@ -160,12 +162,16 @@ map(i, minI, maxI, minO, maxO);
 lo cual, aplicado a nuestro ejemplo:
 
 function setup(){
-  size(256,256);
+  size(600,200);//ancho y alto diferentes a 256
   colorMode(HSB, 25);
 }
 function draw(){
-  background(mouseX, mouseY, 255);//el tinte queda determinado por la posición horizontal, la saturación por la posición vertical
+  background( //acá ocupamos la flexibilidad de los whiteSpaces
+                map(mouseX,0,width,0,255);//width nos permite parametrizar nuestro cálculo independiente de las dimensiones dadas en setup
+                map(mouseY,0,height,0,255);//y lo mismo height 
+                255);//el tinte queda determinado por la posición horizontal, la saturación por la posición vertical
 }
+////////////////////////////////////////////////
 
 
 
