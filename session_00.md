@@ -19,21 +19,33 @@ respecto de autorías, referencias, propósitos, avances y pendientes,
 para nosotrxs mismxs, con otrxs desarrolladorxs o para quienes accedan a este código. 
 */`
 
-Utilizamos comentarios para comunicarnos y como manera de documentar nuestro código.
 Todo texto en una línea despues de un `//` también se transforma en comentario.
 
 `//a continuación sumaremos los índices
 var k=i+j;
 k*=2//y duplicamos nuestro valor`
 
-Ahora, cómo se determina qué texto se ejecutará?
+Utilizamos comentarios para comunicarnos y como manera de documentar nuestro código, así como para inhabilitar líneas de código por ejemplo cuando debuggeamos o queremos saber qué hace un programa.
 
-punto y coma
+Debemos poner un punto y coma `;` al final de cada instrucción para que ésta sea evaluada como tal.
+
+`instruccion1();
+instruccion2();`
+
+La única excepción es a continuación de las llaves `{}`. Entre estas se pueden anidar múltiples instrucciones que serán entendidas como un bloque.
+
+`function prueba(){
+  hacealgo();//punto y coma después de la primera instrucción
+  haceOtraCosa();//punto y coma después de la segunda
+}//no hay punto y coma a continuación de las llaves`
 
 white spaces
 
 usar sólo palabras reservadas.
 
+camelCase
+
+case sentsitive
 
 Un primer vistazo a p5.js
 -----------------
@@ -60,7 +72,7 @@ Podemos modificar la velocidad de reproducción usando la función frameRate():
 `  frameRate(10);//correré a 10 fps`
 `}`
 
-y podemos leer cuantos frames hemos ejecutado usando frameCount, una variable de sistema.
+y podemos leer cuanistos frames hemos ejecutado usando frameCount, una variable de sistema.
 
 `void draw(){
   println(frameCount);//println nos permite imprimir el valor del argumento entre paréntesis, en este caso, de frameCount
@@ -108,9 +120,7 @@ Correlaciones
 -------------
 Veamos el sgte ejemplo:
 
-`
-background(frameCount);//un valor entre 1 e infinito`
-
+`background(frameCount);//un valor entre 1 e infinito`
 
 el color de fondo vá de negro a blanco y luego se queda pegado.
 lo que sucede es que frameCount sobrepasó el valor de 255, límite válido para nuestro sistema de color,
