@@ -143,6 +143,7 @@ Y, así como podemos vincular nuestros valores a comportamientos deterministas y
 también podemos correlacionarlos con eventos indeterminados, como la posición de nuestro mouse, por ejemplo, usando sus coordenadas mouseX y mouseY:
 
 function setup(){
+
   size(256,256);
   colorMode(HSB, 25);
 }
