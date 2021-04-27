@@ -108,60 +108,63 @@ Correlaciones
 -------------
 Veamos el sgte ejemplo:
 
-background(frameCount);//un valor entre 1 e infinito
+`
+background(frameCount);//un valor entre 1 e infinito`
+
 
 el color de fondo vá de negro a blanco y luego se queda pegado.
 lo que sucede es que frameCount sobrepasó el valor de 255, límite válido para nuestro sistema de color,
 usando el operador módulo % podemos convertir este valor en una sierra, que vá de 0 a 255 y luego vuelve a 0.
 
-background(frameCount%256);//un valor entre cero y 255
+`background(frameCount%256);//un valor entre cero y 255` 
 
-a%b nos retorna el resto de a y b, un valor entero entre cero y (b-1).
-Si a%b nos retorna cero, quiere decir que b es múltiplo de 2.
-Esto suele ser de utilidad para saber si un número es par o no ( múltiplo de 2 ) caso en que n%2 sería 0.
+`a%b`nos retorna el resto de `a` y `b`, un valor entero entre cero y `(b-1)`.
+Si `a%b` nos retorna cero, quiere decir que `b` es múltiplo de `2`.
+Esto suele ser de utilidad para saber si un número es par o no ( múltiplo de `2` ) caso en que `n%2` sería `0`.
 
-Si aplicamos esto a un background definido en HSB:
+Si aplicamos esto a un `background` definido en `HSB`:
 
-colorMode(HSB, 255);
-background(frameCount%256,255,255);//obtenemos que el color cicla una y otra vez
+`colorMode(HSB, 255);
+background(frameCount%256,255,255);//obtenemos que el color cicla una y otra vez`
 
 Tambien podemos asociar argumentos a valores aleatorios:
 
-background(random(255));//nos presenta grises aleatorios
+`background(random(255));//nos presenta grises aleatorios`
 
-colorMode(HSB, 255);
-background(random(255),255,255);//obtenemos un color aleatorio full saturacion y brillo
+`colorMode(HSB, 255);
+background(random(255),255,255);//obtenemos un color aleatorio full saturacion y brillo`
 
-random(n) nos entrega un número aleatorio entre 0 y n, sin incluir n.
-random(n, m) nos entrega un número aleatorio entre n y m, sin incluir m.
+`random(n)` nos entrega un número aleatorio entre `0` y `n`, sin incluir `n`.
+`random(n, m)` nos entrega un número aleatorio entre `n` y `m`, sin incluir` m`.
 
-colorMode(HSB, 255)
-background(random(20,50), 255, 255);//un color anaranjado, full saturación y brillo
+`colorMode(HSB, 255)
+background(random(20,50), 255, 255);//un color anaranjado, full saturación y brillo`
 
-colorMode(HSB, 255)
-background(random(20,50), 255, random(255));//un color anaranjado, full saturación y con un brillo que parpadea 
+`colorMode(HSB, 255)
+background(random(20,50), 255, random(255));//un color anaranjado, full saturación y con un brillo que parpadea`
 
-Y, así como podemos vincular nuestros valores a comportamientos deterministas y lineales como el frameRate, y aleatorios como el random,
-también podemos correlacionarlos con eventos indeterminados, como la posición de nuestro mouse, por ejemplo, usando sus coordenadas mouseX y mouseY:
+Y, así como podemos vincular nuestros valores a comportamientos deterministas y lineales como el `frameRate`, y aleatorios como el `random`,
+también podemos correlacionarlos con eventos indeterminados, como la posición de nuestro mouse, por ejemplo, usando sus coordenadas `mouseX` y `mouseY`:
 
-function setup(){
+`function setup(){
   size(256,256);
   colorMode(HSB, 25);
 }
 function draw(){
   background(mouseX, mouseY, 255);//el tinte queda determinado por la posición horizontal, la saturación por la posición vertical
-}
+}`
 
 Bonus track!!
+-------------
 
 En el ejemplo anterior, hemos asegurado el funcionamiento de nuestro script dimensionando el canvas a un tamaño seguro de 256x256px,
-pero, que sucedería si deseáramos un canvas de distinto tamaño y/o proporciones? Para ello está la función map, que hace las veces de regla de tres, mapeando o escalando nuestro valor de entrada ( con sus respectivos límites, minI, maxI ), y sus equivalentes de salida ( entre minO y maxO )
+pero, que sucedería si deseáramos un canvas de distinto tamaño y/o proporciones? Para ello está la función map, que hace las veces de regla de tres, mapeando o escalando nuestro valor de entrada `i` ( con sus respectivos límites, `minI`, `maxI` ), y sus equivalentes de salida ( entre `minO` y `maxO` )
 
-map(i, minI, maxI, minO, maxO);
+`map(i, minI, maxI, minO, maxO);`
 
 lo cual, aplicado a nuestro ejemplo:
 
-function setup(){
+`function setup(){
   size(600,200);//ancho y alto diferentes a 256
   colorMode(HSB, 25);
 }
@@ -170,29 +173,6 @@ function draw(){
                 map(mouseX,0,width,0,255);//width nos permite parametrizar nuestro cálculo independiente de las dimensiones dadas en setup
                 map(mouseY,0,height,0,255);//y lo mismo height 
                 255);//el tinte queda determinado por la posición horizontal, la saturación por la posición vertical
-}
-////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}`
 
 
