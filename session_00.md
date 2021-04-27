@@ -53,16 +53,14 @@ b
 
 El sentido de los espacios blancos, indentados y tabulaciones es darle una organización visual personalizada al código, facilitando su lectura y acceso. Su uso por tanto es bastante subjetivo y en general responde tanto a convenciones como a decisiones basadas en el gusto del autor.
 
-p5.js es un lenguaje case sensitive, es decir sensible a la caja, lo que quiere decir que mayúsculas y minúsculas son diferentes:
-
-
+p5.js es un lenguaje case sensitive, es decir sensible a la caja, lo que quiere decir que mayúsculas y minúsculas son diferentes. No es lo mismo digitar    `background(0);` que `Background(0);`
 
 Para facilitar la lectura de nombres compuestos, se utiliza la estrategia de camelCase o cajaDeCamello, es así como encontramos palabras como:
 
-rectMode(center);
-strokeWeight(1.0)
+`rectMode(center);
+strokeWeight(1.0);`
 
-Finalmente, sólo podemos utilizar instrucciones y palabras reservadas.
+Finalmente, sólo podemos utilizar instrucciones y palabras reservadas de javascript y de la API de p5, a excepción de los nombres de variables y funciones que nosotros definamos.
 
 Un primer vistazo a p5.js
 -----------------
