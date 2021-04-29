@@ -185,11 +185,14 @@ Bonus track!!
 En el ejemplo anterior, hemos asegurado el funcionamiento de nuestro script dimensionando el canvas a un tamaño seguro de 256x256px,
 pero, que sucedería si deseáramos un canvas de distinto tamaño y/o proporciones? Para ello está la función map, que hace las veces de regla de tres, mapeando o escalando nuestro valor de entrada `i` ( con sus respectivos límites, `minI`, `maxI` ), y sus equivalentes de salida ( entre `minO` y `maxO` )
 
-`map(i, minI, maxI, minO, maxO);`
+```javascript
+map(i, minI, maxI, minO, maxO);
+```
 
 lo cual, aplicado a nuestro ejemplo:
 
-`function setup(){
+```javascript
+function setup(){
   createCanvas(600,200);//ancho y alto diferentes a 256
   colorMode(HSB, 25);
 }
@@ -198,6 +201,7 @@ function draw(){
                 map(mouseX,0,width,0,255),//width nos permite parametrizar nuestro cálculo independiente de las dimensiones dadas en setup
                 map(mouseY,0,height,0,255),//y lo mismo height 
                 255);//el tinte queda determinado por la posición horizontal, la saturación por la posición vertical
-}`
+}
+```
 
 
