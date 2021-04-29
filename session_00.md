@@ -1,4 +1,4 @@
-Sesión 01
+Sesión 00
 ---------
 Algunas reglas de sintaxis básicas
 ----------------------------------
@@ -6,14 +6,19 @@ Algunas reglas de sintaxis básicas
 Todo lenguaje de programación tiene sus propias reglas de escritura que denominamos sintaxis.
 Para ejecutarse, un programa no puede tener errores de sintaxis.
 
-Todo texto que se encuentre entre un `/*`y un `*/` se considerará un comentario, es decir, no se ejecutará.
-```javascript
+Hoy escribiremos programas en el lenguaje JavaScript, con la biblioteca p5.js.
+
+Todo texto que se encuentre entre un `/*`y `*/` se considerará un comentario, es decir, no se ejecutará.
+
+`javascript
 /* hola
 nada de esto
 se ejecutará
+*/
 ```
 
 Muchas veces encontraremos esta sintaxis, que llamaríamos comentarios de desarrollador:
+
 ```javascript
 /**  
 Suelen contener información relevante 
@@ -26,9 +31,10 @@ Todo texto en una línea despues de un `//` también se transforma en comentario
 
 ```javascript
 //a continuación sumaremos los índices
-var k=i+j;
-k*=2//y duplicamos nuestro valor
+let k=i+j;
+k*=2; //y duplicamos nuestro valor
 ```
+
 
 Utilizamos comentarios para comunicarnos y como manera de documentar nuestro código, así como para inhabilitar líneas de código por ejemplo cuando debuggeamos o queremos saber qué hace un programa.
 
@@ -36,51 +42,45 @@ Debemos poner un punto y coma `;` al final de cada instrucción para que ésta s
 
 ```javascript
 instruccion1();
-instruccion2();`
+instruccion2();
 ```
 
 La única excepción es a continuación de las llaves `{}`. Entre estas se pueden anidar múltiples instrucciones que serán entendidas como un bloque.
 
 ```javascript
 function prueba(){
-  hacealgo();//punto y coma después de la primera instrucción
-  haceOtraCosa();//punto y coma después de la segunda
-}//no hay punto y coma a continuación de las llaves
+  hacealgo(); //punto y coma después de la primera instrucción
+  haceOtraCosa(); //punto y coma después de la segunda
+} //no hay punto y coma a continuación de las llaves
 ```
 
 Los espacios en blanco o whiteSpaces no son relevantes en el funcionamiento o interpretación del programa, es decir,
 
-```javascript
-var a = 2*b;
-```
+`let a = 2*b;`
 
 es equivalente a
 
-```javascript
-var
+`let
   a
 = 2*
 b
-;
-```
+;`
 
 El sentido de los espacios blancos, indentados y tabulaciones es darle una organización visual personalizada al código, facilitando su lectura y acceso. Su uso por tanto es bastante subjetivo y en general responde tanto a convenciones como a decisiones basadas en el gusto del autor.
 
-p5.js es un lenguaje case sensitive, es decir sensible a la caja, lo que quiere decir que mayúsculas y minúsculas son diferentes. No es lo mismo digitar    `background(0);` que `Background(0);`
+JavaScript es un lenguaje case sensitive, es decir sensible a la caja, lo que quiere decir que mayúsculas y minúsculas son diferentes. No es lo mismo digitar    `background(0);` que `Background(0);`
 
 Para facilitar la lectura de nombres compuestos, se utiliza la estrategia de camelCase o cajaDeCamello, es así como encontramos palabras como:
 
-```javascript
-rectMode(center);
-strokeWeight(1.0);
-```
+`rectMode(center);
+strokeWeight(1.0);`
 
-Finalmente, sólo podemos utilizar instrucciones y palabras reservadas de javascript y de la API de p5, a excepción de los nombres de variables y funciones que nosotros definamos.
+Finalmente, solamente podemos utilizar instrucciones y palabras reservadas de JavaScript y de p5.js, a excepción de los nombres de variables y funciones que nosotros definamos.
 
 Un primer vistazo a p5.js
 -----------------
 
-Lo primero que tenemos cuando nos enfrentamos a la interfaz de p5.js es un código base con el siguiente código:
+Lo primero que tenemos cuando nos enfrentamos a la interfaz de p5.js es un código base:
 
 Aparecen las definiciones de las funciones `setup()` y `draw()`
 
@@ -91,26 +91,22 @@ Otras se encargan de realizar tareas sin devolver valor a cambio.
 
 setup() y draw() son funciones "especiales" que denominaremos eventos.
 Otros eventos serian mouseUp, mouseDown, onKey?, etc
-son funciones reservadas de p5 que están disponibles para ser editadas.
+son funciones reservadas de p5.js que están disponibles para ser editadas.
 
 Asimismo definen el flujo de nuestro programa, setup() será invocada una única vez al correr nuestro programa.
-draw() en cambio se ejecutará en adelante a un frameRate teórico de 60 fps.
+draw() se ejecutará después de setup(), a un frameRate teórico de 60 fps.
 Podemos modificar la velocidad de reproducción usando la función frameRate():
 
-```javascript
-void setup(){
-  createCanvas(100,100);
-  frameRate(10);//correré a 10 fps
-}
-```
+`void setup(){`
+`  createCanvas(100,100);`
+`  frameRate(10);//correré a 10 fps`
+`}`
 
-y podemos leer cuanistos frames hemos ejecutado usando frameCount, una variable de sistema.
+y podemos leer cuantos frames hemos ejecutado usando frameCount, una variable de sistema.
 
-```javascript
-void draw(){
+`void draw(){
   println(frameCount);//println nos permite imprimir el valor del argumento entre paréntesis, en este caso, de frameCount
-}
-```
+}`
 
 Volvamos al código que nos aparece por defecto en el editor.
 
@@ -128,35 +124,28 @@ background es una función que nos permite colorear el fondo de nuestro canvas d
 En el ejemplo, 220 equivale a un gris.
 Cuando background recibe UN sólo argumento, este valor es interpretado como una escala de grises de 8 bits, es decir, con valores entre 0 y 255.
 
-```javascript
-background(0);//negro  
+`background(0);//negro  
 background(128);//gris medio  
-background(255);//blanco
-```
+background(255);//blanco`  
 
 Sin embargo, background también puede recibir TRES argumentos, y en este caso los interpretará como RGB, es decir como un sistema de color aditivo de tres canales de 8 bits cada uno, correspondientes al Rojo, Verde y Azul respectivamente.
 
-```javascript
-background(255,0,0);//soy rojo
+`background(255,0,0);//soy rojo
 background(0,255,255);//soy cyan
-background(255,128,0);//quién soy?
-```
+background(255,128,0);//quién soy?`
 
 Usando la función colorMode, podemos modificar el modo de color e interpretar los colores en el sistema HSB, H de tinte, S de saturación y B de brillo.
 Entre las ventajas de utilizar este modo de color, está su plasticidad, ya que es más sencillo e intuitivo poder generar relaciones y variaciones de color en base a estos componentes.
+
 El tinte corresponde a la posición el el espectro cromático y se mide generalmente en grados decimales, es decir, su valor está entre 0° y 360°.
 La saturación se suele medir en porcentajes y corresponde a la cantidad de color, a menor saturación nos acercamos a la escala de grises.
 El brillo es un valor que se suele medir en porcentajes, a menor brillo nos acercamos al negro.
 
-```javascript
-colorMode(HSB, 360, 100, 100);//configura el modo de color a HSB con los rangos para cada uno de los componentes según standar
-background(180, 50, 100);
-```
+`colorMode(HSB, 360, 100, 100);//configura el modo de color a HSB con los rangos para cada uno de los componentes según standar
+background(180, 50, 100);`
 
-```javascript
-colorMode(HSB);//configura el modo de color a HSB con los rangos de cada uno de los componentes entre 0 y 255
-background(128,128,255);//me he resultado más práctico este manera
-```
+`colorMode(HSB);//configura el modo de color a HSB con los rangos de cada uno de los componentes entre 0 y 255
+background(128,128,255);//me he resultado más práctico este manera`
 
 Correlaciones
 -------------
@@ -165,10 +154,13 @@ Veamos el sgte ejemplo:
 `background(frameCount);//un valor entre 1 e infinito`
 
 el color de fondo vá de negro a blanco y luego se queda pegado.
+
 lo que sucede es que frameCount sobrepasó el valor de 255, límite válido para nuestro sistema de color,
 usando el operador módulo % podemos convertir este valor en una sierra, que vá de 0 a 255 y luego vuelve a 0.
 
-`background(frameCount%256);//un valor entre cero y 255` 
+```javascript
+background(frameCount%256);//un valor entre cero y 255
+```
 
 `a%b`nos retorna el resto de `a` y `b`, un valor entero entre cero y `(b-1)`.
 Si `a%b` nos retorna cero, quiere decir que `b` es múltiplo de `2`.
@@ -178,20 +170,23 @@ Si aplicamos esto a un `background` definido en `HSB`:
 
 ```javascript
 colorMode(HSB, 255);
-background(frameCount%256,255,255);//obtenemos que el color cicla una y otra vez`
+background(frameCount%256,255,255);//obtenemos que el color cicla una y otra vez
 ```
 
 Tambien podemos asociar argumentos a valores aleatorios:
 
-`background(random(255));//nos presenta grises aleatorios`
-
 ```javascript
-colorMode(HSB, 255);
+background(random(255));//nos presenta grises aleatorios
+```
+
+```javascriptcolorMode(HSB, 255);
 background(random(255),255,255);//obtenemos un color aleatorio full saturacion y brillo
 ```
 
-`random(n)` nos entrega un número aleatorio entre `0` y `n`, sin incluir `n`.
-`random(n, m)` nos entrega un número aleatorio entre `n` y `m`, sin incluir` m`.
+```javascript
+random(n)` nos entrega un número aleatorio entre 0 y n, sin incluir n.
+random(n, m)` nos entrega un número aleatorio entre n y m, sin incluir m.
+```
 
 ```javascript
 colorMode(HSB, 255)
