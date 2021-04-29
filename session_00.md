@@ -10,7 +10,7 @@ Hoy escribiremos programas en el lenguaje JavaScript, con la biblioteca p5.js.
 
 Todo texto que se encuentre entre un `/*`y `*/` se considerará un comentario, es decir, no se ejecutará.
 
-`javascript
+```javascript
 /* hola
 nada de esto
 se ejecutará
@@ -97,10 +97,12 @@ Asimismo definen el flujo de nuestro programa, setup() será invocada una única
 draw() se ejecutará después de setup(), a un frameRate teórico de 60 fps.
 Podemos modificar la velocidad de reproducción usando la función frameRate():
 
-`void setup(){`
-`  createCanvas(100,100);`
-`  frameRate(10);//correré a 10 fps`
-`}`
+```javascript
+void setup(){`
+  createCanvas(100,100);`
+  frameRate(10);//correré a 10 fps`
+}
+```
 
 y podemos leer cuantos frames hemos ejecutado usando frameCount, una variable de sistema.
 
@@ -149,7 +151,7 @@ background(128,128,255);//me he resultado más práctico este manera`
 
 Correlaciones
 -------------
-Veamos el sgte ejemplo:
+Veamos el siguiente ejemplo:
 
 `background(frameCount);//un valor entre 1 e infinito`
 
